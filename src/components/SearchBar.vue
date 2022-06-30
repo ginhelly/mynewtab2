@@ -14,7 +14,7 @@ defineProps({
     <input
       type="search"
       :name="searchKey"
-      style="background-image: url(https://www.fillmurray.com/80/80)"
+      style="background-image: url(https://www.fillmurray.com/45/45)"
       autocomplete="off"
     >
     <input style='display: none;' type="submit" :value="placeholder">
@@ -37,5 +37,11 @@ input[type=search] {
   padding: 12px 20px 12px 50px;
   height: 40px;
   margin: 5px auto
+}
+
+@media (max-width: 800px) {
+  input[type=search] {
+    width: 100%;
+  }
 }
 </style>

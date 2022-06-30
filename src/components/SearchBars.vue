@@ -3,7 +3,7 @@ import SearchBar from './SearchBar.vue';
 </script>
 
 <template>
-  <div class="card-wrapper">
+  <div class="searchbars-wrapper">
     <SearchBar form-action="https://duckduckgo.com/" placeholder="DuckDuckGo" />
     <SearchBar form-action="https://google.com/search" placeholder="Google" />
   </div>
@@ -20,15 +20,11 @@ h3 {
   font-size: 1.2rem;
 }
 
-.greetings h1,
-.greetings h3 {
-  text-align: center;
+.searchbars-wrapper {
+  width: 100%;
+  min-width: 300px;
+  flex-grow: 8;
+  margin-left: auto;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
 </style>

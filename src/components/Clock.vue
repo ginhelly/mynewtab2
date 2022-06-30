@@ -47,10 +47,9 @@ onMounted(() => {
 
 <style>
 .clock-wrapper {
-  position: absolute;
   width: 14vw;
   height: 100px;
-  left: 4vw;
+  flex-grow: 1;
   text-align: center;
 }
 
@@ -62,4 +61,5 @@ onMounted(() => {
 #clock-seconds {
   display: inline;
 }
+
 </style>

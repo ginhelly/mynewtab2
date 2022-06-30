@@ -6,7 +6,7 @@ import Clock from './components/Clock.vue';
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="navbar-wrapper">
       <Clock />
       <SearchBars />
     </div>
@@ -32,9 +32,17 @@ header {
   line-height: 1.5;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+@media (max-width: 800px) {
+  .navbar-wrapper {
+    flex-direction: column;
+  }
 }
 
 a,
