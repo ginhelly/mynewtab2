@@ -26,6 +26,7 @@ function checkSingleDigit (digit) {
 }
 
 onMounted(() => {
+  updateTime()
   setInterval(updateTime, 5000)
 })
 </script>
