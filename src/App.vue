@@ -2,6 +2,7 @@
 import SearchBars from './components/SearchBars.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import Clock from './components/Clock.vue';
+import NotesList from './components/NotesList.vue'
 </script>
 
 <template>
@@ -13,7 +14,7 @@ import Clock from './components/Clock.vue';
   </header>
 
   <main class="line-wrapper">
-    <TheWelcome />
+    <NotesList />
   </main>
 </template>
 
