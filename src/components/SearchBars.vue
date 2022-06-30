@@ -1,11 +1,50 @@
 <script setup>
+import { reactive, onMounted } from 'vue';
 import SearchBar from './SearchBar.vue';
+
+const localStorage = window.localStorage
+const state = reactive({
+  quote: 'Keep your head cool.'
+})
+
+const searchEngines = [
+  {
+    id: 1,
+    name: 'DuckDuckGo',
+    base: 'https://duckduckgo.com/'
+  },
+  {
+    id: 2,
+    name: 'Google',
+    base: 'https://google.com/search'
+  }
+]
+
+function changeQuote () {
+  const newQuote = prompt('Дай мне новую мотивирующую цитатку')
+  if (!newQuote) return
+  state.quote = newQuote
+  localStorage.setItem('quote', newQuote)
+}
+
+onMounted(() => {
+  const existingQuote = localStorage.getItem('quote')
+  if ( existingQuote ) {
+    state.quote = existingQuote
+  }
+})
 </script>
 
 <template>
   <div class="searchbars-wrapper">
-    <SearchBar form-action="https://duckduckgo.com/" placeholder="DuckDuckGo" />
-    <SearchBar form-action="https://google.com/search" placeholder="Google" />
+    <SearchBar
+      v-for="engine in searchEngines"
+      :form-action="engine.base"
+      :placeholder="name"
+    />
+    <div class="quote" @click="changeQuote">
+      {{ state.quote }}
+    </div>
   </div>
 </template>
 
@@ -27,4 +66,9 @@ h3 {
   margin-left: auto;
 }
 
+.quote {
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
 </style>

@@ -6,13 +6,13 @@ import Clock from './components/Clock.vue';
 
 <template>
   <header>
-    <div class="navbar-wrapper">
+    <div class="line-wrapper">
       <Clock />
       <SearchBars />
     </div>
   </header>
 
-  <main>
+  <main class="line-wrapper">
     <TheWelcome />
   </main>
 </template>
@@ -21,7 +21,7 @@ import Clock from './components/Clock.vue';
 @import './assets/base.css';
 
 #app {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
 
@@ -32,7 +32,7 @@ header {
   line-height: 1.5;
 }
 
-.navbar-wrapper {
+.line-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -40,7 +40,7 @@ header {
 }
 
 @media (max-width: 800px) {
-  .navbar-wrapper {
+  .line-wrapper {
     flex-direction: column;
   }
 }

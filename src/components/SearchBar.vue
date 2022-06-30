@@ -23,7 +23,7 @@ defineProps({
 
 <style scoped>
 input[type=search] {
-  width: 70%;
+  width: 100%;
   box-sizing: border-box;
   border-style: solid;
   border-width: thin;
